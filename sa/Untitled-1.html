@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Valorant FPS - Final Version</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+    
+    #overlay {
+      position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.85);
+      display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; color: white;
+    }
+    button { 
+      padding: 15px 50px; font-size: 24px; cursor: pointer; background: #ff4655; color: white; border: none; font-weight: bold; text-transform: uppercase;
+    }
+
+    /* SİLAH YERLEŞİMİ - TAM İSTEDİĞİN GİBİ */
+    #weapon-container {
+      position: fixed; 
+      bottom: -40px; /* Biraz aşağıda dursun */
+      right: 0%;    /* Sağ köşeye tam yasla */
+      width: 550px;  /* Görseli büyüttüm ki perspektif otursun */
+      z-index: 100; 
+      pointer-events: none;
+      transition: transform 0.1s ease-out; /* Hareket yumuşatma */
+    }
+    #weapon { 
+      width: 100%; 
+      height: auto; 
+      display: block;
+      /* Silahı hafifçe sola döndürerek merkeze bakmasını sağladım */
+      transform: rotate(-5deg); 
+    }
+    
+    #hud { position: fixed; bottom: 40px; right: 50px; color: white; font-size: 35px; z-index: 200; font-weight: bold; }
+    #reload-msg { 
+      position: fixed; top: 45%; left: 50%; transform: translate(-50%, -50%);
+      color: #ff4655; font-size: 30px; display: none; z-index: 200; font-weight: bold;
+    }
+    #crosshair {
+      position: fixed; top: 50%; left: 50%; width: 12px; height: 12px;
+      border: 2px solid #0f0; border-radius: 50%; transform: translate(-50%, -50%);
+      pointer-events: none; z-index: 50;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="overlay">
+    <h1 style="color:#ff4655; font-size: 50px;">VALORANT WEB</h1>
+    <p>WASD: Hareket | SOL TIK: Ateş | R: Reload</p>
+    <button id="startButton">OYUNA BAŞLA</button>
+  </div>
+
+  <div id="crosshair"></div>
+  <div id="hud"><span id="ammo">30</span> / ∞</div>
+  <div id="reload-msg">RELOADING...</div>
+  
+  <div id="weapon-container">
+    <img id="weapon" src="images.jpg" alt="Gun">
+  </div>
+
+  <script src="https://unpkg.com/three@0.154.0/build/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0b1220);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const player = new THREE.Group();
+    scene.add(player);
+    player.add(camera);
+    camera.position.y = 1.6;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.5));
+    const grid = new THREE.GridHelper(1000, 100, 0x444444, 0x222222);
+    scene.add(grid);
+
+    let ammo = 30;
+    let isReloading = false;
+    let pitch = 0, yaw = 0;
+    const keys = {};
+    const projectiles = [];
+
+    document.addEventListener('keydown', (e) => {
+      keys[e.key.toLowerCase()] = true;
+      if(e.key.toLowerCase() === 'r') reload();
+    });
+    document.addEventListener('keyup', (e) => keys[e.key.toLowerCase()] = false);
+
+    window.addEventListener('mousemove', (e) => {
+      if (document.pointerLockElement === document.body) {
+        yaw -= e.movementX * 0.002;
+        pitch -= e.movementY * 0.002;
+        pitch = Math.max(-1.4, Math.min(1.4, pitch));
+        player.rotation.y = yaw;
+        camera.rotation.x = pitch;
+
+        // Silah sarsıntısı (Mouse hareketine göre)
+        const wpn = document.getElementById('weapon-container');
+        wpn.style.transform = `translateX(${e.movementX * 0.2}px) translateY(${e.movementY * 0.2}px)`;
+      }
+    });
+
+    function fire() {
+      if (isReloading || ammo <= 0) {
+        if (ammo <= 0) reload();
+        return;
+      }
+      ammo--;
+      document.getElementById('ammo').innerText = ammo;
+      
+      const wpn = document.getElementById('weapon-container');
+      wpn.style.transform = "translateY(30px) scale(0.95) rotate(-8deg)";
+      setTimeout(() => wpn.style.transform = "translateY(0) scale(1) rotate(-5deg)", 60);
+
+      const bullet = new THREE.Mesh(new THREE.SphereGeometry(0.06), new THREE.MeshBasicMaterial({ color: 0xffcc00 }));
+      const bulletDir = new THREE.Vector3();
+      camera.getWorldDirection(bulletDir);
+      bullet.position.copy(camera.getWorldPosition(new THREE.Vector3()));
+      bullet.userData.velocity = bulletDir.multiplyScalar(100);
+      scene.add(bullet);
+      projectiles.push(bullet);
+    }
+
+    function reload() {
+      if (isReloading || ammo === 30) return;
+      isReloading = true;
+      document.getElementById('reload-msg').style.display = 'block';
+      const wpn = document.getElementById('weapon-container');
+      wpn.style.transition = "0.5s ease-in";
+      wpn.style.transform = "translateY(500px)"; 
+      
+      setTimeout(() => {
+        ammo = 30;
+        document.getElementById('ammo').innerText = ammo;
+        isReloading = false;
+        document.getElementById('reload-msg').style.display = 'none';
+        wpn.style.transform = "translateY(0) rotate(-5deg)";
+        wpn.style.transition = "transform 0.1s ease-out";
+      }, 1500); 
+    }
+
+    window.addEventListener('mousedown', (e) => {
+      if (document.pointerLockElement === document.body && e.button === 0) fire();
+    });
+
+    document.getElementById('startButton').addEventListener('click', () => {
+      document.body.requestPointerLock();
+      document.documentElement.requestFullscreen().catch(() => {});
+      document.getElementById('overlay').style.display = 'none';
+    });
+
+    const clock = new THREE.Clock();
+    function animate() {
+      requestAnimationFrame(animate);
+      const dt = clock.getDelta();
+
+      if (document.pointerLockElement === document.body) {
+        const speed = 12 * dt;
+        const move = new THREE.Vector3();
+        if (keys['w']) move.z -= 1;
+        if (keys['s']) move.z += 1;
+        if (keys['a']) move.x -= 1;
+        if (keys['d']) move.x += 1;
+        move.normalize().applyQuaternion(player.quaternion);
+        player.position.addScaledVector(move, speed);
+      }
+
+      for (let i = projectiles.length - 1; i >= 0; i--) {
+        const p = projectiles[i];
+        p.position.addScaledVector(p.userData.velocity, dt);
+        if (p.position.distanceTo(player.position) > 400) {
+          scene.remove(p);
+          projectiles.splice(i, 1);
+        }
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
