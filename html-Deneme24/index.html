@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Başvuru Formu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e9f2f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px 40px;
+      width: 480px;
+      box-shadow: 0 2px 10px rgb(0,0,0,);
+    }
+    h2 {
+      text-align: center;
+      color: #1e64b7;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="file"] {
+      margin-top: 5px;
+    }
+    .required {
+      color: red;
+      font-size: 0.85em;
+    }
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+    }
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+    button {
+      width: 100%;
+      background: #007bdc;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    .form-footer {
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+    
+  <form class="form-container">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1>Form Başvuru Formu</h1>
+    <label>Ad Soyad *</label>
+    <input type="text" placeholder="Adınızı ve soyadınızı giriniz" required />
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>E-posta *</label>
+    <input type="email" placeholder="ornek@mail.com" required />
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>Telefon *</label>
+    <input type="text" pattern="(\(5\d{2}\)\s?|\d{3})\s?\d{3}\s?\d{2}\s?\d{2}" placeholder="+905xxxxxxxxx" required />
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>Doğum Tarihi *</label>
+    <input type="date" value="2025-10-30" min="1900-01-01" max="2025-10-30" required />
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>Başvurulan Pozisyon *</label>
+    <select required>
+      <option value="">Seçiniz</option>
+      <option>Yazılım Geliştirici</option>
+      <option>Grafik Tasarımcı</option>
+      <option>Proje Yöneticisi</option>
+      <option>Veri Analisti</option>
+    </select>
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>Yetenekleriniz</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" /> HTML</label>
+      <label><input type="checkbox" /> CSS</label>
+      <label><input type="checkbox" /> JavaScript</label>
+      <label><input type="checkbox" /> Python</label>
+      <label><input type="checkbox" /> Excel</label>
+      <label><input type="checkbox" /> Photoshop</label>
+    </div>
+
+    <label>İlgi Alanları</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" /> Teknoloji</label>
+      <label><input type="checkbox" /> Sanat</label>
+      <label><input type="checkbox" /> Spor</label>
+      <label><input type="checkbox" /> Müzik</label>
+      <label><input type="checkbox" /> Kitap</label>
+      <label><input type="checkbox" /> Seyahat</label>
+    </div>
+
+    <label>Araba kullanıyor musunuz?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="araba" /> Evet</label>
+      <label><input type="radio" name="araba" /> Hayır</label>
+    </div>
+
+    <label>CV Yükle (PDF, max 2MB) *</label>
+    <input type="file" accept=".pdf" required />
+    <div class="required">Bu alan zorunludur.</div>
+
+    <label>Kendinizi Tanıtın (max 500 karakter)</label>
+    <textarea maxlength="500" placeholder="Kendinizden bahsedin..."></textarea>
+
+    <div class="form-footer">
+      <label><input type="checkbox" required /> Bilgilerimin doğruluğunu onaylıyorum.</label>
+      <div class="required">Bu alan zorunludur.</div>
+    </div>
+
+    <button type="submit">Başvuruyu Gönder</button>
+  </form>
+</body>
+</html>
+
+

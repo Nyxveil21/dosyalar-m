@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            display: inline-block;
+            padding: 15px;
+            background-color: beige;
+            border: 1px solid #999;
+            border-radius: 10px;
+        }
+        div {
+            margin: 10px 0px;
+        }
+        label {
+            display: inline-block;
+            width: 110px;
+        }
+        button
+        {
+            float: right;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+
+        <div>
+            <label for="tbAd">Ad:</label>
+            <input type="text" name="ad" id="tbAd" minlength="2" required>
+        </div>
+
+        <div>
+            <label for="tbSoyad">Soyad:</label>
+            <input type="text" name="soyad" id="tbSoyad" minlength="2" required>
+        </div>
+
+        <div>
+            <label for="tbEposta">E-Posta:</label>
+            <input type="email" name="eposta" id="tbEPosta" required>
+        </div>
+
+        <div>
+            <label for="tbYas">Yaş:</label>
+            <input type="number" name="yas" id="tbYas" min="16" max="120" required>
+        </div>
+
+        <div>
+            <label for="tbDogumTarihi">Doğum Tarihi:</label>
+            <input type="date" name="dogumtarihi" id="tbDogumTarihi" min="1905-01-01" max="2009-01-30" required>
+        </div>
+
+        <div>
+            <label for="tbAdres">Adres:</label>
+            <textarea name="website" id="tbAdres" rows="3" minlength="10" maxlength="200" required></textarea>
+        </div>
+
+        <div>
+            <label for="tbTCKimlikNo">T.C. Kimlik No:</label>
+            <input type="text" id="tbTCKimlikNo" name="tc" pattern="[0-9]{11}" required>
+        </div>
+
+        <div>
+            <label for="tbTelefon">Telefon:</label>
+            <input type="tel" name="telefon" id="tbTelefon" pattern="\+90[0-9]{10}" required>
+        </div>
+
+        <div>
+            <label for="tbSifre">Şifre:</label>
+            <input type="password" name="sifre" id="tbSifre" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>
+
+        <div>
+            <button type="submit">Kaydet</button>
+            <button type="reset">Temizle</button>
+        </div>
+
+    </form>
+</body>
+</html>

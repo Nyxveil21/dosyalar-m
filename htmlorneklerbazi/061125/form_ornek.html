@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="form.html" method="POST">
+        Ad: <input type="text" name="ad" value="Ali" id="ad"><br><br>
+        Soyad: <input type="text" name="soyad" value="Çalışkan" id="soyad"><br><br>
+        Yaş: <input type="number" name="yas" value="18" id="yas"><br><br>
+        Cinsiyet:
+        <input type="radio" name="cinsiyet" value="erkek" id="rbErkek">
+        <label for="rbErkek">Erkek</label>
+        <input type="radio" name="cinsiyet" value="kadın" id="rbKadın">
+        <label for="rbKadın">Kadın</label>
+
+        <br><br>
+        İlgi Alanları:
+        <input type="checkbox" name="ilgi1" value="spor" id="cbSpor">
+        <label for="cbSpor">Spor</label>
+        <input type="checkbox" name="ilgi2" value="müzik" id="cbMüzik">
+        <label for="cbMüzik">Müzik</label>
+        <input type="checkbox" name="ilgi3" value="sinema" id="cbSinema">
+        <label for="cbSinema">Sinema</label>
+        <br><br>
+
+        Mesaj: <br>
+        <textarea name="mesaj" id="mesaj" cols="30" rows="10">Buraya mesajınızı yazabilirsiniz.</textarea>
+        <br><br>
+        
+        E-Posta: <input type="email" name="email" value="alicaliskan@gmail.com" id="email"><br><br>
+        
+        Şifre: <input type="password" name="sifre" value="123456" id="sifre"><br><br>
+        
+        Doğum Tarihi: <input type="date" name="dogum" value="2006-12-30" id="dogum"><br><br>
+        
+        Renk Seçimi: <input type="color" name="renk" value="#ff0000" id="renk"><br><br>
+       
+        Ülke:
+        <select name="ulke" id="ulke">
+            <option value="turkiye">Türkiye</option>
+            <option value="almanya">Almanya</option>
+            <option value="fransa">Fransa</option>
+            <option value="italya">İtalya</option>
+            <option value="ispanya">İspanya</option>
+        </select>
+        <br><br>
+        3 Favori Renk:
+        <select name="favori_renkler" id="favori_renkler" multiple>
+            <option value="kirmizi">Kırmızı</option>
+            <option value="mavi">Mavi</option>
+            <option value="yesil">Yeşil</option>
+            <option value="sari">Sarı</option>
+            <option value="turuncu">Turuncu</option>
+            <option value="mor">Mor</option>
+        </select>
+        <br><br>
+        3 Favori Film:
+        <select name="favori_filmler" id="favori_filmler" multiple>
+            <option value="inception">Inception</option>
+            <option value="matrix">Matrix</option>
+            <option value="interstellar">Interstellar</option>
+            <option value="godfather">The Godfather</option>
+            <option value="dark_knight">The Dark Knight</option>
+            <option value="pulp_fiction">Pulp Fiction</option>
+        </select>
+        <br><br>
+        3 Favori Kitap:
+        <select name="favori_kitaplar" id="favori_kitaplar" multiple>
+            <option value="1984">1984</option>
+            <option value="brave_new_world">Brave New World</option>
+            <option value="catch-22">Catch-22</option>
+            <option value="fahrenheit_451">Fahrenheit 451</option>
+            <option value="the_great_gatsby">The Great Gatsby</option>
+            <option value="moby_dick">Moby Dick</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Gönder</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .divmeter{
+        background-color: aqua;
+        display: inline-block;
+    }
+    .kirmizi { color: red; }
+    .mavi { color: blue; }
+    .yesil { color: green; }
+    .vurgulu { background-color: yellow; }
+    .kutu { border: 2px solid black; padding: 5px; }
+    .inline-block {
+        display: inline-block;
+        border: 1px solid #3498db;
+        padding: 8px;
+        background-color: #ecf0f1;
+    }
+
+</style>
+<body>
+    <h2>Progress</h2>
+    <p>1. Basit İlerleme Çubuğu (30%):</p>
+    <progress value="12" max="100"></progress>
+    <br><br>
+    <p>2. Dosya Yükleme Simülasyonu (85%):</p>
+    <progress value="12" max="100"></progress>
+    <p>Dosya Yükleniyor %85</p>
+    <br><br>
+    <p>3. Belirsiz İlerleme (value yok):</p>
+    <progress></progress>
+    <br><br>
+    <h2>Meter</h2>
+    <p>1. Basit Ölçüm (50/100):</p>
+    <div><meter class="divmeter" value="10" min="0" max="100"></meter></div>
+    <br><br>
+    <p>2. Disk Kullanımı - Normal (40 GB / 100 GB):</p>
+    <div><meter class="divmeter" value="40" min="0" max="100" low="30" high="70" optimum="20"></meter></div>
+    <br><br>
+    <p>3. Disk Kullanımı - Dikkat (75 GB / 100 GB):</p>
+    <div><meter class="divmeter" value="75" min="0" max="100" low="30" high="70" optimum="20"></meter></div>
+    <br><br>
+    <p>4. Disk Kullanımı - Tehlike (95 GB / 100 GB):</p>
+    <div><meter class="divmeter" value="95" min="0" max="100" low="30" high="70" optimum="20"></meter></div>
+    <br><br>
+    <p>5. Sınav Puanı (8.5/10):</p>
+    <meter value="8.5" min="0" max="10" low="5" high="8" optimum="9"></meter>
+    <br><br>
+    <h2>A Etiketi</h2>
+    <p>1. Basit Bağlantı</p>
+    <a href="https://www.google.com">Google'a Git</a>
+    <br><br>
+    <p>Yeni Sekmede Açma (target="_blank")</p>
+    <a href="https://www.wikipedia.org" target="_blank">Wikipedia (Yeni Sekme)</a>
+    <br><br>
+    <p>3. Email Bağlantısı (mailto:)</p>
+    <a href="mailto:ornek@email.com">Email Gönder</a>
+    <br><br>
+    <p>4. Telefon Bağlantısı (tel:)</p>
+    <a href="tel:+905551234567">Ara: +90 555 123 45 67</a>
+    <br><br>
+    <p>5. Aynı Sayfada Bölüme Gitme (Anchor Link)</p>
+    <a href="#alt-bolum">Alta Git</a>
+    <br><br>
+    <p>6. Title Özelliği ile Açıklama</p>
+    <a href="https://www.github.com" title="Kod paylaşım platformu">GitHub</a>
+    <br><br>
+    <h2>span Etiketi</h2>
+    <p>Bu cümlede <span class="kirmizi">kırmızı</span>, <span class="mavi">mavi</span> ve <span class="yesil">yeşil</span> kelimeler var.</p>
+    <br><br>
+    <p>Bu metinde <span class="vurgulu">önemli bir bilgi</span> vurgulanmıştır.</p>
+    <br><br>
+    <p>Bu cümlede <span class="kutu">kutulu bir kelime</span> bulunuyor.</p>
+    <br><br>
+    <span class="inline-block">Bu inline-block span</span>
+    <br><br>
+    <span style="color: red; border: 2px solid red; padding: 3px; background-color: #ffe6e6;">%50 İNDİRİM</span>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2 id="alt-bolum">Alt Bölüm</h2>
+
+    
+</body>
+</html>

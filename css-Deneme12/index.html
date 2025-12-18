@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        margin: 0px;
+    }
+    .a{
+        background-image:url(css_orneksayfa3_resim.avif);
+        padding-top: 10px;
+        text-align: center;
+        height: 600px;
+    }
+    .header {
+        background-color: rgb(28, 34, 65);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid rgb(165, 165, 165);
+        z-index: 100;      
+    }
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo p {
+        color: cyan;
+        font-weight: bold;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .div-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 16px;
+    }
+    .w{
+        text-align: center;
+        color: white;
+        margin-top: 150px;
+        font-size: 60px;
+        text-shadow: -5px -5px 20px rgb(0, 217, 255);
+    }
+    .a p {
+        color: rgb(185, 218, 240);
+        text-align: center;
+    }
+    .menu-button { 
+        display: inline-block; 
+        margin-top: 30px; 
+        padding: 12px 35px; 
+        background:linear-gradient(135deg, #0ab4e7 0%, #1533ddda 100%);
+        color: white; 
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 50px;     
+    }
+    .menu-button:hover {
+        text-decoration: none;
+        background-color: white;
+        color: rgb(255, 145, 0);
+        border: 2px solid rgb(255, 145, 0);
+    }
+    :root {
+        --bg-dark: #0f172a; 
+        --card-bg: #1e293b; 
+        --text-light: #f1f1f1; 
+        --accent-color: #00bcd4; 
+        --discount-color: #ef4444; 
+    }
+
+    .populer-rotalar-wrapper {
+        padding: 60px 80px; 
+        width: 1920px;
+        margin: 0 auto; 
+        background-color: var(--bg-dark); 
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+        color: white;
+        border-left: 4px solid cyan;
+        display: inline-block;
+    }
+
+    .card-container {
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 25px; 
+        justify-content: center; 
+    }
+
+    .kart {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 300px; 
+        min-height: 280px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        position: relative; 
+        transition: transform 0.3s ease;
+    }
+
+    .kart:hover {
+        transform: translateY(-5px);
+    }
+
+    .gezegen-gorseli {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .kart-icerik h3 {
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .kart-icerik p {
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    .indirim-etiketi {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--discount-color);
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top-right-radius: 10px; 
+        border-bottom-left-radius: 10px;
+    }
+</style>
+<body>
+
+    <div class="header"> 
+        <div class="header-content"> 
+            <div class="logo">
+                <p>GALACTIC</p>
+            </div>
+            <div class="div-links">
+                <a href="#">Turlar</a>
+                <a href="#">Gemi Filosu</a>
+                <a href="#">İletişim</a>
+            </div>
+        </div>
+    </div>
+    <div class="a">   
+        <h1 class="w">SINIRLARI AŞIN. <br> EVRENİ KEŞFEDİN.</h1>
+        <p>Hayatınızın en unutulmaz yolculuğuna Mars kolonimizde başlayın.</p>
+        <a href="#" class="menu-button">Rezervasyon Yap</a>
+    </div>
+    <div class="populer-rotalar-wrapper">
+    
+        <h2 class="section-title">POPÜLER ROTALLAR</h2>
+        
+            <div class="card-container">
+                
+                <div class="kart">
+                    <span class="gezegen-emoji">🌕</span> 
+                    <div class="kart-icerik">
+                        <h3>AY ÜSSÜ ALPHA</h3>
+                        <p>Dünya manzaralı lüks kapsüllerimizde hafta sonu kaçamağı.</p>
+                    </div>
+                </div>
+
+                <div class="kart indirimli">
+                    <div class="indirim-etiketi">%20 İNDİRİM</div>
+                    <span class="gezegen-emoji">🪐</span> 
+                    <div class="kart-icerik">
+                        <h3>SATÜRN HALKALARI</h3>
+                        <p>Halkaların üzerinde süzülen otelimizde gerçeküstü ortam deneyi.</p>
+                    </div>
+                </div>
+                
+                <div class="kart">
+                    <span class="gezegen-emoji">🔴</span> 
+                    <div class="kart-icerik">
+                        <h3>KIZIL GEZEGEN MARS</h3>
+                        <p>Olympus Mons tırmanışı ve antik nehir yataklarında safari.</p>
+                    </div>
+                </div>
+                
+            </div> 
+    </div>
+</body>
+</html>

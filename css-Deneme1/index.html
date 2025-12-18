@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div,span{
+        margin:0;
+        padding: 0;
+    }
+    p::before {
+        content: "→ ";
+        color: blue;
+    }
+    p::after {
+        content: " ←";
+        color: red;
+    }
+    p {
+        color: blue;
+    }
+
+    div {
+        background: gray;
+    }
+    pre{
+        padding: 10px;
+        background: blue;
+    }
+    a[href^="https"] {
+        color: #ffffaf;
+    }
+    a[href$=".pdf"] {
+        background-color: red;
+    }
+    a[href*="google"] {
+        padding: 20px;
+    }
+    a:hover {
+        background: darkblue;
+    }
+    a:focus {
+        border-color: blue;
+    }
+    li:first-child {
+        font-weight: bold;
+    }
+    li:last-child {
+        color: red;
+    }
+    li:nth-child(2) {
+        background: yellow;
+    }
+    p::first-letter {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    p::first-line {
+        color: blue;
+        text-transform: uppercase;
+    }
+</style>
+<body>
+    <div>
+        <p>
+            PMTAL
+        </p>
+        <pre>ABUZİDDİN</pre>
+        <pre>ABUZİDDİN</pre>
+        <pre>ABUZİDDİN</pre>
+    </div>
+    <a href="https.google.pdf">https</a>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+</body>
+</html>

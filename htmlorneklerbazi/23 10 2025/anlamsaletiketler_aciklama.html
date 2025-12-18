@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Etiketleri Rehberi</title>
+</head>
+<body>
+    <header>
+        <h1>HTML Etiketleri Rehberi</h1>
+        <p>Bu sayfa temel HTML etiketlerini ve kullanım alanlarını açıklamaktadır.</p>
+    </header>
+
+    <nav>
+        <h2>İçindekiler</h2>
+        <ul>
+            <li><a href="#temel-yapi">Temel Yapı ve Bölümleme Etiketleri</a></li>
+            <li><a href="#metin-icerik">Metin ve İçerik Etiketleri</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <section id="temel-yapi">
+                <h2>Temel Yapı ve Bölümleme Etiketleri</h2>
+                
+                <section>
+                    <h3>&lt;header&gt; Etiketi</h3>
+                    <p><strong>&lt;header&gt;</strong> etiketi, bir belgenin veya bölümün başlık kısmını tanımlar. Genellikle site logosu, navigasyon menüleri ve ana başlık bilgilerini içerir.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;nav&gt; Etiketi</h3>
+                    <p><strong>&lt;nav&gt;</strong> etiketi, navigasyon bağlantılarını gruplamak için kullanılır. Site içi gezinme menüleri bu etiket ile sarmalanır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;main&gt; Etiketi</h3>
+                    <p><strong>&lt;main&gt;</strong> etiketi, sayfanın ana içeriğini belirtir. Bir sayfada sadece bir main etiketi bulunmalıdır ve sayfa başına özgü içerik barındırır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;article&gt; Etiketi</h3>
+                    <p><strong>&lt;article&gt;</strong> etiketi, bağımsız olarak dağıtılabilir içerikleri tanımlar. Blog yazıları, haberler veya forum gönderileri için idealdir.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;section&gt; Etiketi</h3>
+                    <p><strong>&lt;section&gt;</strong> etiketi, belgeyi tematik bölümlere ayırır. Her section genellikle kendi başlığına sahip olmalıdır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;aside&gt; Etiketi</h3>
+                    <p><strong>&lt;aside&gt;</strong> etiketi, ana içerikle ilgili ancak yan bilgi niteliğindeki içerikleri tanımlar. Sidebar, reklam alanları veya ilgili linkler için kullanılır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;footer&gt; Etiketi</h3>
+                    <p><strong>&lt;footer&gt;</strong> etiketi, bir belgenin veya bölümün alt bilgi kısmını tanımlar. Telif hakkı, iletişim bilgileri ve ilgili linkler için kullanılır.</p>
+                </section>
+            </section>
+
+            <section id="metin-icerik">
+                <h2>Metin ve İçerik Etiketleri</h2>
+                
+                <section>
+                    <h3>Başlık Etiketleri (h1-h6)</h3>
+                    <h4>Başlık Hiyerarşisi Örneği:</h4>
+                    <h1>En Büyük Başlık - H1</h1>
+                    <h2>İkinci Seviye Başlık - H2</h2>
+                    <h3>Üçüncü Seviye Başlık - H3</h3>
+                    <h4>Dördüncü Seviye Başlık - H4</h4>
+                    <h5>Beşinci Seviye Başlık - H5</h5>
+                    <h6>Altıncı Seviye Başlık - H6</h6>
+                    <p>Başlık etiketleri <strong>h1</strong>'den <strong>h6</strong>'ya kadar sıralanır ve içeriğin hiyerarşik yapısını oluşturur.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;p&gt; Etiketi</h3>
+                    <p><strong>&lt;p&gt;</strong> etiketi, paragraf oluşturmak için kullanılır. Metin içeriklerini mantıklı bloklar halinde organize eder.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;strong&gt; ve &lt;em&gt; Etiketleri</h3>
+                    <p><strong>&lt;strong&gt;</strong> etiketi, <strong>önemli metinleri kalın</strong> göstermek için kullanılır.</p>
+                    <p><strong>&lt;em&gt;</strong> etiketi, <em>vurgulanmak istenen metinleri italik</em> göstermek için kullanılır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;figure&gt; ve &lt;figcaption&gt; Etiketleri</h3>
+                    <figure>
+                        <img src="ornekresim.svg" alt="Örnek resim" width="300" height="200">
+                        <figcaption>Bu bir örnek resim açıklamasıdır. <strong>&lt;figcaption&gt;</strong> etiketi resmin altında açıklama sağlar.</figcaption>
+                    </figure>
+                    <p><strong>&lt;figure&gt;</strong> etiketi, resim, diagram, kod bloku gibi içerikleri gruplar. <strong>&lt;figcaption&gt;</strong> ise bu içeriğin açıklamasını sağlar.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;time&gt; Etiketi</h3>
+                    <p>Bu makale <time datetime="2025-09-25">25 Eylül 2025</time> tarihinde yazılmıştır.</p>
+                    <p><strong>&lt;time&gt;</strong> etiketi, tarih ve saat bilgilerini semantik olarak işaretlemek için kullanılır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;details&gt; ve &lt;summary&gt; Etiketleri</h3>
+                    <details>
+                        <summary><strong>Detayları Görmek İçin Tıklayın</strong></summary>
+                        <p><strong>&lt;details&gt;</strong> etiketi, kullanıcının açıp kapatabileceği bir detay widget'ı oluşturur.</p>
+                        <p><strong>&lt;summary&gt;</strong> etiketi ise details elementi için görünür başlık sağlar.</p>
+                        <p>Bu etiketler, SSS sayfaları, açılır menüler ve gizlenebilir içerikler için idealdir.</p>
+                    </details>
+                </section>
+
+                <section>
+                    <h3>&lt;mark&gt; Etiketi</h3>
+                    <p>Metinde <mark>vurgulanmış</mark> veya <mark>işaretlenmiş</mark> bölümleri göstermek için <strong>&lt;mark&gt;</strong> etiketi kullanılır.</p>
+                    <p>Bu etiket genellikle arama sonuçlarında <mark>aranan kelimeyi</mark> vurgulamak için kullanılır.</p>
+                </section>
+
+                <section>
+                    <h3>&lt;hgroup&gt; Etiketi</h3>
+                    <hgroup>
+                        <h2>Ana Başlık</h2>
+                        <h3>Alt Başlık veya Açıklayıcı Başlık</h3>
+                    </hgroup>
+                    <p><strong>&lt;hgroup&gt;</strong> etiketi, birbiriyle ilişkili başlıkları gruplamak için kullanılır. Bir ana başlık ve alt başlığı birlikte kullanırken semantik yapıyı korur.</p>
+                </section>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Ek Bilgiler</h3>
+            <p><em>Bu rehber, HTML5 semantik etiketlerinin temel kullanımını açıklamaktadır.</em></p>
+            
+            <details>
+                <summary><strong>Etiket Grupları Hakkında Detaylar</strong></summary>
+                <p><mark>Semantik etiketler</mark> web sayfalarının anlamsal yapısını belirler.</p>
+                <p>Yapısal etiketler sayfa düzenini, metin etiketleri ise içeriğin formatını kontrol eder.</p>
+            </details>
+            
+            <p><strong>İpucu:</strong> Semantik etiketler, arama motorları ve ekran okuyucular için içeriğin anlamını belirler.</p>
+            <p>Son güncelleme: <time datetime="2025-09-25T14:30">25 Eylül 2025, 14:30</time></p>
+            
+            <footer>
+                <p><em>Aside bölümü footer bilgileri</em></p>
+            </footer>
+        </aside>
+    </main>
+
+    <footer>
+        <hgroup>
+            <h3>HTML Etiketleri Rehberi</h3>
+            <h4>Eğitim Amaçlı İçerik</h4>
+        </hgroup>
+        <p>&copy; 2025 HTML Etiketleri Rehberi. Bu içerik <mark>tamamen eğitim amaçlıdır</mark>.</p>
+        
+        <details>
+            <summary>İletişim ve Destek Bilgileri</summary>
+            <p>Bu rehber hakkında sorularınız için destek ekibiyle iletişime geçebilirsiniz.</p>
+            <p>Email: <em>destek@htmlrehberi.com</em></p>
+        </details>
+    </footer>
+</body>
+</html>

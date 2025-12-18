@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Kamp Tercihleri</title>
+<style>
+    body{font-family: Arial;
+        background: #f0f8f0; 
+        padding: 20px;
+    }
+    h2{
+        background: #4caf50; 
+        color: white; 
+        padding: 10px; 
+    }
+    .box {
+        background: #f9fff9; 
+        border: 1px solid #bcdcbc; 
+        padding: 15px; 
+        margin-bottom: 15px; 
+    }
+    label{
+        font-weight:bold; 
+        color: #2e7d32; 
+        display: block;
+        margin-bottom: 5px; 
+    }
+    .toplam {
+        font-weight: bold; 
+        margin-top: 10px; 
+        color: #2e7d32; 
+    }
+</style>
+</head>
+<body>
+    <label for="donem">Katılacağınız Dönem:</label>
+    <select id="donem" required>
+      <option value="" data-fiyat="0">Dönem seçiniz</option>
+      <option value="1" data-fiyat="1500">1. Dönem (23-30 Haziran) - 1500 TL</option>
+      <option value="2" data-fiyat="1500">2. Dönem (1-8 Temmuz) - 1500 TL</option>
+      <option value="3" data-fiyat="1500">3. Dönem (8-15 Temmuz) - 1500 TL</option>
+      <option value="4" data-fiyat="3500">Tüm Dönem (23 Haz - 15 Tem) - 3500 TL</option>
+    </select>
+  </div>
+<br><br>
+  <label>Katılmak İstediğiniz Atölyeler:</label>
+  <div class="box">
+    
+    <label><input type="checkbox" name="atolye" value="Doğa Fotoğrafçılığı"> Doğa Fotoğrafçılığı</label>
+    <label><input type="checkbox" name="atolye" value="Yoga ve Meditasyon"> Yoga ve Meditasyon</label>
+    <label><input type="checkbox" name="atolye" value="Dağ Tırmanışı"> Dağ Tırmanışı</label>
+    <label><input type="checkbox" name="atolye" value="Yaratıcı Yazarlık"> Yaratıcı Yazarlık</label>
+    <label><input type="checkbox" name="atolye" value="Kamp Ateşinde Gitar"> Kamp Ateşinde Gitar</label>
+    <label><input type="checkbox" name="atolye" value="Yaban Hayatı Gözlemi"> Yaban Hayatı Gözlemi</label>
+  </div>
+  <small style="top: 0px; color: #64ce67;">(En fazla 3, her biri +200 TL)</small>
+<br><br>
+<label>Konaklama Tercihi:</label>
+  <div class="box">
+    
+    <label><input type="radio" name="konaklama" value="çadır"> Çadır (fiyata dahil)</label>
+    <label><input type="radio" name="konaklama" value="bungalov"> Bungalov (+500 TL)</label>
+  </div>
+  <label>Daha Önce Kamp Deneyiminiz Var mı?</label>
+  <div class="box">
+    
+    <label><input type="radio" name="deneyim" value="evet"> Evet</label>
+    <label><input type="radio" name="deneyim" value="hayır"> Hayır</label>
+  </div>
+
+  <div class="toplam">Toplam: <span id="toplamTutar">0</span> TL</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Range Örneği</title>
+    <style>
+        body {
+            background-color: #e8f5e9;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            margin: 20px;
+            border: 3px solid #4caf50;
+        }
+        
+        h2 {
+            color: #2e7d32;
+            margin: 0 0 25px 0;
+        }
+        
+        .slider-group {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f1f8e9;
+            border: 2px solid #aed581;
+        }
+        
+        label {
+            display: block;
+            color: #33691e;
+            margin: 0 0 10px 0;
+        }
+        
+        input {
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+        
+        .value-display {
+            background-color: #c8e6c9;
+            padding: 10px;
+            margin: 10px 0 0 0;
+            border: 1px solid #81c784;
+            color: #1b5e20;
+        }
+        
+        .info {
+            color: #558b2f;
+            margin: 5px 0 0 0;
+        }
+        
+        .summary {
+            margin: 30px 0 0 0;
+            padding: 20px;
+            background-color: #dcedc8;
+            border: 2px solid #4caf50;
+        }
+        
+        .summary h3 {
+            color: #2e7d32;
+            margin: 0 0 15px 0;
+        }
+        
+        .summary-item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: white;
+            border: 1px solid #aed581;
+            color: #33691e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ses ve Görüntü Ayarları</h2>
+        
+        <div class="slider-group">
+            <label>Ses Seviyesi</label>
+            <input type="range" min="0" max="100" value="50" step="1">
+            <div class="value-display">Seviye: 50</div>
+            <p class="info">0 (Sessiz) - 100 (Maksimum)</p>
+        </div>
+        
+        <div class="slider-group">
+            <label>Parlaklık</label>
+            <input type="range" min="0" max="100" value="75" step="5">
+            <div class="value-display">Seviye: 75</div>
+            <p class="info">5'er adımlarla ayarlanır</p>
+        </div>
+        
+        <div class="slider-group">
+            <label>Kontrast</label>
+            <input type="range" min="-50" max="50" value="0" step="10">
+            <div class="value-display">Seviye: 0</div>
+            <p class="info">-50 (Minimum) - +50 (Maksimum)</p>
+        </div>
+        
+        <div class="slider-group">
+            <label>Zoom Oranı (%)</label>
+            <input type="range" min="50" max="200" value="100" step="25">
+            <div class="value-display">Seviye: 100%</div>
+            <p class="info">%50, %75, %100, %125, %150, %175, %200</p>
+        </div>
+        
+        <div class="summary">
+            <h3>Mevcut Ayarlar</h3>
+            <div class="summary-item">Ses: 50/100</div>
+            <div class="summary-item">Parlaklık: 75/100</div>
+            <div class="summary-item">Kontrast: 0 (Normal)</div>
+            <div class="summary-item">Zoom: %100</div>
+        </div>
+    </div>
+</body>
+</html>

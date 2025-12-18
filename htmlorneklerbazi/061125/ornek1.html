@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Öğretici Sayfa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0 0 20px 0;
+            border: 2px solid #1a252f;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 15px;
+            margin: 0 0 20px 0;
+        }
+        
+        nav a {
+            color: white;
+            padding: 10px 15px;
+            margin: 0 5px 0 0;
+        }
+        
+        main {
+            background-color: white;
+            padding: 20px;
+            margin: 0 0 20px 0;
+        }
+        
+        section {
+            margin: 0 0 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+        
+        article {
+            margin: 0 0 20px 0;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+        }
+        
+        .flex-item {
+            padding: 20px;
+            margin: 0 10px 0 0;
+            background-color: #3498db;
+            color: white;
+            border: 2px solid #2980b9;
+        }
+        
+        table {
+            border: 2px solid #2c3e50;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: 1px solid #2980b9;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        form {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #bdc3c7;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 5px 0;
+            color: #2c3e50;
+        }
+        
+        input, select, textarea {
+            display: block;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            border: 2px solid #bdc3c7;
+            background-color: white;
+        }
+        
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: 2px solid #229954;
+            margin: 10px 0 0 0;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 20px 0 0 0;
+            border: 2px solid #1a252f;
+        }
+        
+        .highlight {
+            background-color: #f39c12;
+            color: white;
+            padding: 5px 10px;
+        }
+        
+        aside {
+            background-color: #e8f5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #81c784;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Öğretici Sayfa</h1>
+        <p>Temel HTML etiketleri ve CSS kullanımı örnekleri</p>
+    </header>
+    
+    <nav>
+        <a href="#biçimlendirme">Biçimlendirme</a>
+        <a href="#anlamsal">Anlamsal Etiketler</a>
+        <a href="#tablo">Tablolar</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#form">Formlar</a>
+    </nav>
+    
+    <main>
+        <section id="biçimlendirme">
+            <h2>Temel Biçimlendirme Etiketleri</h2>
+            <article>
+                <h3>Başlıklar ve Paragraflar</h3>
+                <h4>Bu bir H4 başlığıdır</h4>
+                <h5>Bu bir H5 başlığıdır</h5>
+                <h6>Bu bir H6 başlığıdır</h6>
+                <p>Bu normal bir <strong>paragraf</strong> örneğidir. İçinde <em>vurgulu</em> ve <span class="highlight">öne çıkan</span> metinler bulunur.</p>
+                <p>İkinci paragrafta <b>kalın yazı</b>, <i>italik yazı</i> ve <u>altı çizili yazı</u> örnekleri var.</p>
+            </article>
+            
+            <article>
+                <h3>Listeler</h3>
+                <h4>Sıralı Liste:</h4>
+                <ol>
+                    <li>Birinci öğe</li>
+                    <li>İkinci öğe</li>
+                    <li>Üçüncü öğe</li>
+                </ol>
+                
+                <h4>Sırasız Liste:</h4>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="anlamsal">
+            <h2>Anlamsal HTML Etiketleri</h2>
+            <article>
+                <h3>Article Örneği</h3>
+                <p>Article etiketi, bağımsız, kendi içinde tamamlanmış içerikler için kullanılır.</p>
+            </article>
+            
+            <aside>
+                <h3>Aside (Yan Bilgi)</h3>
+                <p>Aside etiketi, ana içerikle ilişkili ancak yan bilgi niteliğindeki içerikler için kullanılır.</p>
+            </aside>
+        </section>
+        
+        <section id="tablo">
+            <h2>Tablo Kullanımı</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Öğrenci Adı</th>
+                        <th>Ders</th>
+                        <th>Not</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ahmet Yılmaz</td>
+                        <td>Matematik</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td>Ayşe Kaya</td>
+                        <td>Fizik</td>
+                        <td>92</td>
+                    </tr>
+                    <tr>
+                        <td>Mehmet Demir</td>
+                        <td>Kimya</td>
+                        <td>78</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="flexbox">
+            <h2>Flexbox Kullanımı</h2>
+            <p>Flexbox ile yatay düzende esnek kutular oluşturabilirsiniz:</p>
+            <div class="flex-container">
+                <div class="flex-item">Kutu 1</div>
+                <div class="flex-item">Kutu 2</div>
+                <div class="flex-item">Kutu 3</div>
+            </div>
+        </section>
+        
+        <section id="form">
+            <h2>Form ve Doğrulama</h2>
+            <form action="#" method="post">
+                <label for="ad">Ad Soyad: *</label>
+                <input type="text" id="ad" name="ad" required>
+                
+                <label for="email">E-posta: *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="tel">Telefon:</label>
+                <input type="tel" id="tel" name="tel" pattern="[0-9]{10}">
+                
+                <label for="yas">Yaş (18-65):</label>
+                <input type="number" id="yas" name="yas" min="18" max="65">
+                
+                <label for="tarih">Doğum Tarihi:</label>
+                <input type="date" id="tarih" name="tarih">
+                
+                <label for="sehir">Şehir: *</label>
+                <select id="sehir" name="sehir" required>
+                    <option value="">Seçiniz</option>
+                    <option value="istanbul">İstanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="izmir">İzmir</option>
+                </select>
+                
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="4"></textarea>
+                
+                <input type="submit" value="Gönder">
+            </form>
+            <p><small>* ile işaretli alanlar zorunludur</small></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 HTML Öğretici Sayfa - Tüm hakları saklıdır</p>
+        <p>İletişim: ornek@email.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Kullanım Rehberi</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5;">
+    
+    <h1>Display: Flex Kullanım Rehberi</h1>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Flexbox Nedir?</h2>
+        <p><strong>Flexbox (Flexible Box)</strong>, elementleri esnek bir şekilde konumlandırmak için kullanılan modern bir CSS düzen sistemidir. Öğeleri yatay veya dikey olarak hizalamayı, aralarındaki boşluğu ayarlamayı ve esnek boyutlandırmayı kolaylaştırır.</p>
+        <p><strong>Temel Kural:</strong> Bir div'e <code>display: flex</code> verdiğinizde, o div bir "flex container" olur ve içindeki direkt çocuk elementler "flex items" haline gelir.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>1. Temel Flex Kullanımı</h3>
+        <div style="display: flex; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">Öğe 1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">Öğe 2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">Öğe 3</div>
+        </div>
+        <p><strong>Açıklama:</strong> display: flex uygulandığında elementler varsayılan olarak yan yana dizilir (row - yatay). Bu en basit flex kullanımıdır.</p>
+        <p><strong>Kod:</strong> &lt;div style="display: flex;"&gt;</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Flex Direction (Yön)</h2>
+        <p><strong>flex-direction</strong> özelliği, öğelerin hangi yönde sıralanacağını belirler.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>2. Flex Direction: Row (Yatay - Varsayılan)</h3>
+        <div style="display: flex; flex-direction: row; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+            <div style="background-color: #a8e6cf; padding: 20px; margin: 5px;">4</div>
+        </div>
+        <p><strong>Açıklama:</strong> flex-direction: row öğeleri soldan sağa doğru yatay olarak sıralar.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>3. Flex Direction: Column (Dikey)</h3>
+        <div style="display: flex; flex-direction: column; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+            <div style="background-color: #a8e6cf; padding: 20px; margin: 5px;">4</div>
+        </div>
+        <p><strong>Açıklama:</strong> flex-direction: column öğeleri yukarıdan aşağıya doğru dikey olarak sıralar.</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Justify Content (Yatay Hizalama)</h2>
+        <p><strong>justify-content</strong> özelliği, öğelerin ana eksen boyunca (yatay) nasıl hizalanacağını belirler.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>4. Justify Content: Flex-Start (Başlangıç)</h3>
+        <div style="display: flex; justify-content: flex-start; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler sola yaslanır (varsayılan davranış).</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>5. Justify Content: Center (Ortala)</h3>
+        <div style="display: flex; justify-content: center; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler ortada hizalanır. Flexbox ile ortalama yapmak çok kolaydır!</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>6. Justify Content: Flex-End (Son)</h3>
+        <div style="display: flex; justify-content: flex-end; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler sağa yaslanır.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>7. Justify Content: Space-Between (Aralarına Boşluk)</h3>
+        <div style="display: flex; justify-content: space-between; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> İlk öğe başa, son öğe sona yaslanır, aralarında eşit boşluklar oluşur.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>8. Justify Content: Space-Around (Etrafında Boşluk)</h3>
+        <div style="display: flex; justify-content: space-around; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Her öğenin etrafında eşit boşluk oluşur.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>9. Justify Content: Space-Evenly (Eşit Boşluklar)</h3>
+        <div style="display: flex; justify-content: space-evenly; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Tüm boşluklar (kenarlardakiler dahil) eşit olur.</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Align Items (Dikey Hizalama)</h2>
+        <p><strong>align-items</strong> özelliği, öğelerin çapraz eksen boyunca (dikey) nasıl hizalanacağını belirler.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>10. Align Items: Flex-Start (Üst)</h3>
+        <div style="display: flex; align-items: flex-start; background-color: #dfe6e9; padding: 10px; height: 150px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler üste hizalanır.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>11. Align Items: Center (Ortada)</h3>
+        <div style="display: flex; align-items: center; background-color: #dfe6e9; padding: 10px; height: 150px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler dikey olarak ortada hizalanır.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>12. Align Items: Flex-End (Alt)</h3>
+        <div style="display: flex; align-items: flex-end; background-color: #dfe6e9; padding: 10px; height: 150px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px;">1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px;">2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px;">3</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler alta hizalanır.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>13. Tam Ortalama (Yatay ve Dikey)</h3>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #dfe6e9; padding: 10px; height: 150px;">
+            <div style="background-color: #ff6b6b; padding: 30px; color: white; font-weight: bold;">ORTADA</div>
+        </div>
+        <p><strong>Açıklama:</strong> justify-content: center ve align-items: center birlikte kullanılarak hem yatay hem dikey ortalama yapılır. Bu, flexbox'ın en popüler kullanımlarından biridir!</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Flex Wrap (Sarma)</h2>
+        <p><strong>flex-wrap</strong> özelliği, öğelerin tek satırda mı yoksa birden fazla satıra mı sarılacağını belirler.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>14. Flex Wrap: Nowrap (Sarmala)</h3>
+        <div style="display: flex; flex-wrap: nowrap; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px; min-width: 150px;">Kutu 1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px; min-width: 150px;">Kutu 2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px; min-width: 150px;">Kutu 3</div>
+            <div style="background-color: #a8e6cf; padding: 20px; margin: 5px; min-width: 150px;">Kutu 4</div>
+            <div style="background-color: #ff85a2; padding: 20px; margin: 5px; min-width: 150px;">Kutu 5</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler tek satırda kalır, taşma olursa küçülürler (varsayılan).</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>15. Flex Wrap: Wrap (Sarma)</h3>
+        <div style="display: flex; flex-wrap: wrap; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px; margin: 5px; min-width: 150px;">Kutu 1</div>
+            <div style="background-color: #4ecdc4; padding: 20px; margin: 5px; min-width: 150px;">Kutu 2</div>
+            <div style="background-color: #ffe66d; padding: 20px; margin: 5px; min-width: 150px;">Kutu 3</div>
+            <div style="background-color: #a8e6cf; padding: 20px; margin: 5px; min-width: 150px;">Kutu 4</div>
+            <div style="background-color: #ff85a2; padding: 20px; margin: 5px; min-width: 150px;">Kutu 5</div>
+        </div>
+        <p><strong>Açıklama:</strong> Öğeler sığmazlarsa alt satıra geçer. Responsive tasarım için çok kullanışlıdır!</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Gap (Boşluk)</h2>
+        <p><strong>gap</strong> özelliği, flex öğeleri arasında boşluk bırakır. margin kullanmaya gerek kalmaz!</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>16. Gap Kullanımı</h3>
+        <div style="display: flex; gap: 20px; background-color: #dfe6e9; padding: 10px;">
+            <div style="background-color: #ff6b6b; padding: 20px;">Kutu 1</div>
+            <div style="background-color: #4ecdc4; padding: 20px;">Kutu 2</div>
+            <div style="background-color: #ffe66d; padding: 20px;">Kutu 3</div>
+        </div>
+        <p><strong>Açıklama:</strong> gap: 20px ile öğeler arasında 20px boşluk oluşturulur. Margin'e göre daha temiz bir yöntemdir.</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Pratik Örnekler</h2>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>17. Navbar (Gezinme Çubuğu)</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; background-color: #2c3e50; padding: 15px; color: white;">
+            <div style="font-size: 24px; font-weight: bold;">Logo</div>
+            <div style="display: flex; gap: 20px;">
+                <div>Ana Sayfa</div>
+                <div>Hakkında</div>
+                <div>İletişim</div>
+            </div>
+        </div>
+        <p><strong>Açıklama:</strong> Logo solda, menü öğeleri sağda hizalanmış bir navbar yapısı.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>18. Kart Düzeni</h3>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <div style="background-color: white; border: 1px solid #ddd; padding: 0; width: 200px;">
+                <div style="background-color: #3498db; padding: 20px; color: white; font-weight: bold;">Kart 1</div>
+                <div style="padding: 15px;">Bu bir flexbox ile yapılmış kart tasarımıdır.</div>
+            </div>
+            <div style="background-color: white; border: 1px solid #ddd; padding: 0; width: 200px;">
+                <div style="background-color: #e74c3c; padding: 20px; color: white; font-weight: bold;">Kart 2</div>
+                <div style="padding: 15px;">Kartlar responsive olarak sarılır.</div>
+            </div>
+            <div style="background-color: white; border: 1px solid #ddd; padding: 0; width: 200px;">
+                <div style="background-color: #2ecc71; padding: 20px; color: white; font-weight: bold;">Kart 3</div>
+                <div style="padding: 15px;">Ekran küçülünce alt satıra geçerler.</div>
+            </div>
+        </div>
+        <p><strong>Açıklama:</strong> flex-wrap: wrap ile responsive kart düzeni.</p>
+    </div>
+    
+    <div style="background-color: white; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>19. Footer (Alt Bilgi) Düzeni</h3>
+        <div style="display: flex; justify-content: space-around; background-color: #34495e; padding: 30px; color: white;">
+            <div>
+                <h4 style="margin-top: 0;">Hakkımızda</h4>
+                <p style="margin: 5px 0;">Şirket Bilgisi</p>
+                <p style="margin: 5px 0;">Ekip</p>
+            </div>
+            <div>
+                <h4 style="margin-top: 0;">Hizmetler</h4>
+                <p style="margin: 5px 0;">Web Tasarım</p>
+                <p style="margin: 5px 0;">Mobil Uygulama</p>
+            </div>
+            <div>
+                <h4 style="margin-top: 0;">İletişim</h4>
+                <p style="margin: 5px 0;">Email: info@site.com</p>
+                <p style="margin: 5px 0;">Tel: 0555 555 5555</p>
+            </div>
+        </div>
+        <p><strong>Açıklama:</strong> justify-content: space-around ile footer bölümleri eşit aralıklarla yerleştirilmiştir.</p>
+    </div>
+    
+    <div style="background-color: #e8f4f8; padding: 15px; margin: 20px 0;">
+        <h2>Önemli Noktalar</h2>
+        <ul>
+            <li><strong>display: flex</strong> bir container'a uygulanır, içindeki direkt çocuklar flex item olur</li>
+            <li><strong>justify-content</strong> yatay (ana eksen) hizalama için kullanılır</li>
+            <li><strong>align-items</strong> dikey (çapraz eksen) hizalama için kullanılır</li>
+            <li><strong>flex-direction</strong> öğelerin yönünü belirler (row veya column)</li>
+            <li><strong>flex-wrap</strong> öğelerin sarılmasını kontrol eder</li>
+            <li><strong>gap</strong> öğeler arası boşluk için modern ve temiz bir yöntemdir</li>
+            <li>Flexbox, responsive tasarım için çok güçlü bir araçtır</li>
+            <li>Ortalama işlemleri flexbox ile çok kolaydır</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

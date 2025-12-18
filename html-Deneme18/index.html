@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="index.html" method="POST">
+    <label for="ad">Ad:</label>
+    <input type="text" name="ad" id="ad"><br><br>
+
+    <label for="soyad">Soyad:</label>
+    <input type="text" name="soyad" id="soyad"><br><br>
+
+    <label for="yas">Yaş:</label>
+    <input type="text" name="yas" id="yas"><br><br>
+
+    <span>Cinsiyet:</span>
+    <input type="radio" name="cinsiyet" value="erkek" id="erkek">
+    <label for="erkek">Erkek</label>
+    <input type="radio" name="cinsiyet" value="kadin" id="kadin">
+    <label for="kadin">Kadın</label><br><br>
+
+    <label for="meslek">Meslek:</label>
+    <select name="meslek" id="meslek">
+        <option value="ogrenci">Öğrenci</option>
+        <option value="isci">İşçi</option>
+        <option value="memur">Memur</option>
+        <option value="emekli">Emekli</option>
+    </select><br><br>
+
+    <span>Hobiler:</span>
+    <input type="checkbox" name="hobiler" value="spor" id="spor">
+    <label for="spor">Spor</label>
+    <input type="checkbox" name="hobiler" value="müzik" id="muzik">
+    <label for="muzik">Müzik</label>
+    <input type="checkbox" name="hobiler" value="sinema" id="sinema">
+    <label for="sinema">Sinema</label>
+    <input type="checkbox" name="hobiler" value="kitap" id="kitap">
+    <label for="kitap">Kitap</label><br><br>
+
+    <label for="aciklama">Açıklama:</label><br>
+    <textarea name="aciklama" id="aciklama" cols="30" rows="10"></textarea><br><br>
+
+    <label for="email">E-Posta:</label>
+    <input type="email" name="email" id="email"><br><br>
+
+    <label for="sifre">Şifre:</label>
+    <input type="password" name="sifre" id="sifre"><br><br>
+
+    <label for="dogum">Doğum Tarihi:</label>
+    <input type="date" name="dogum" id="dogum"><br><br>
+
+    <label for="renk">Renk Seçimi:</label>
+    <input type="color" name="renk" id="renk"><br><br>
+
+    <label for="ulke">Ülke:</label>
+    <select name="ulke" id="ulke">
+        <option value="turkiye">Türkiye</option>
+        <option value="almanya">Almanya</option>
+        <option value="fransa">Fransa</option>
+        <option value="italya">İtalya</option>
+        <option value="ispanya">İspanya</option>
+        <option value="abd">ABD</option>
+        <option value="ingiltere">İngiltere</option>
+    </select><br><br>
+
+    <label for="favori_renk">3 Favori Renk (birden çok seçebilirsiniz):</label>
+    <select name="favori_renk" id="favori_renk" multiple>
+        <option value="kirmizi">Kırmızı</option>
+        <option value="mavi">Mavi</option>
+        <option value="yesil">Yeşil</option>
+        <option value="sari">Sarı</option>
+        <option value="turuncu">Turuncu</option>
+        <option value="mor">Mor</option>
+        <option value="pembe">Pembe</option>
+        <option value="beyaz">Beyaz</option>
+        <option value="siyah">Siyah</option>
+        <option value="gri">Gri</option>
+    </select><br><br>
+
+    <label for="favori_muzik">3 Favori Müzik Türü (birden çok seçebilirsiniz):</label>
+    <select name="favori_muzik" id="favori_muzik" multiple>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="jazz">Jazz</option>
+        <option value="klasik">Klasik</option>
+        <option value="hiphop">Hip-Hop</option>
+        <option value="metal">Metal</option>
+        <option value="blues">Blues</option>
+        <option value="country">Country</option>
+        <option value="elektronik">Elektronik</option>
+        <option value="reggae">Reggae</option>
+    </select><br><br>
+
+    <label for="favori_film">3 Favori Film Türü (birden çok seçebilirsiniz):</label>
+    <select name="favori_film" id="favori_film" multiple>
+        <option value="aksiyon">Aksiyon</option>
+        <option value="dram">Dram</option>
+        <option value="komedi">Komedi</option>
+        <option value="korku">Korku</option>
+        <option value="bilimkurgu">Bilim Kurgu</option>
+        <option value="romantik">Romantik</option>
+        <option value="animasyon">Animasyon</option>
+        <option value="belgesel">Belgesel</option>
+        <option value="fantastik">Fantastik</option>
+        <option value="gerilim">Gerilim</option>
+    </select><br><br>
+
+    <label for="favori_kitap">3 Favori Kitap Türü (birden çok seçebilirsiniz):</label>
+    <select name="favori_kitap" id="favori_kitap" multiple>
+        <option value="roman">Roman</option>
+        <option value="hikaye">Hikaye</option>
+        <option value="siir">Şiir</option>
+        <option value="tarih">Tarih</option>
+        <option value="bilim">Bilim</option>
+        <option value="felsefe">Felsefe</option>
+        <option value="psikoloji">Psikoloji</option>
+        <option value="ekonomi">Ekonomi</option>
+        <option value="sanat">Sanat</option>
+        <option value="cocuk">Çocuk</option>
+    </select><br><br>
+
+    <input type="submit" value="Gönder">
+
+    <fieldset>
+        <legend>
+            <label for="file">Dosya Yükle:</label>
+        </legend>
+        <input type="file" id="file" accept="image/*">
+        </fieldset>
+
+</form>
+
+
+
+
+</body>
+</html>

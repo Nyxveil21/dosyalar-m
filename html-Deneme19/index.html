@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" method="post">
+        <input type="text" id="ad" name="ad" placeholder="Ad"><br><br>
+
+        <input type="text" id="soyad" name="soyad" placeholder="Soyad"><br><br>
+
+        <input type="number" id="yas" name="yas" min="0" max="120" placeholder="Yaşınız"><br><br>
+
+        <input type="date" id="Dogum-Tarihi" name="dogum"><br><br>
+
+        <span>Cinsiyet:</span><br>
+            <input type="radio" id="erkek" name="cinsiyet" value="erkek">
+        <span>Erkek</span>
+            <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+        <span>Kadın</span><br><br>
+
+        <select id="meslek" name="meslek">
+            <option value="">Mesleği</option>
+            <option value="ogrenci">Öğrenci</option>
+            <option value="isci">İşçi</option>
+            <option value="memur">Memur</option>
+            <option value="emekli">Emekli</option>
+        </select><br><br>
+
+        <span>Hobileri:</span><br>
+            <input type="checkbox" id="spor" name="hobiler" value="spor">
+            <span>Spor</span>
+            <input type="checkbox" id="muzik" name="hobiler" value="muzik">
+            <span>Müzik</span>
+            <input type="checkbox" id="sinema" name="hobiler" value="sinema">
+            <span>Sinema</span>
+            <input type="checkbox" id="kitap" name="hobiler" value="kitap">
+        <span>Kitap</span><br><br>
+
+        <textarea id="aciklama" name="aciklama" rows="8" cols="50" placeholder="Deneyimleri"></textarea><br><br>
+
+        <input type="email" id="email" name="email" placeholder="E-Posta"><br><br>
+        
+        <input type="submit" value="Tamamla">
+    </form>
+</body>
+</html>

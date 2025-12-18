@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .header {
+        background-color: rgb(43, 61, 143);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;      
+    }
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo p {
+        color: rgb(255, 145, 0);
+        font-weight: bold;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .div-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 16px;
+    }
+    
+    .bas {
+        background: linear-gradient(135deg, #3b4683da 0%, #0ab4e7 100%);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: 200px;
+        text-align: center;
+        border-bottom: 5px solid rgb(255, 145, 0);
+    }
+
+    .a {
+        color: white;
+        text-align: center;
+        font-size: 34px;
+    }
+
+    .aciklama {
+        text-align: center;
+        color: white;
+    }
+    .menu-button { 
+        display: inline-block; 
+        margin-top: 30px; 
+        padding: 12px 35px; 
+        background-color: rgb(255, 145, 0); 
+        color: white; 
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 50px;     
+    }
+    .menu-button:hover {
+        text-decoration: none;
+        background-color: white;
+        color: rgb(255, 145, 0);
+        border: 2px solid rgb(255, 145, 0);
+    }
+    .awe{
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+    }
+    .menu-table {
+        width: 400px;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    .menu-table td {
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .menu-table .price {
+        text-align: right;
+        width: 80px;
+    }
+
+    .menu-table tr:last-child td {
+        border-bottom: none;
+    }
+    .qwe{
+        border: 1px solid rgb(211, 208, 208);
+        display: inline-block;
+        border-radius: 10px;
+        
+    }
+    .alt{
+        background-color: antiquewhite;
+    }
+
+    .blog-kapsayici {
+        display: flex;
+        gap: 15px;
+        align-items: stretch;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        padding-top: 20px;
+    }
+
+    .kutu .K {
+        color: rgb(255, 145, 0);
+        font-size: 40px; 
+        font-weight: bold;
+        margin-right: 5px;
+        float: left;
+        height: 40px; 
+        display: block;
+    }
+
+    .kutu, .kutu2, .kutu3 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        flex-grow: 1; 
+        flex-shrink: 1; 
+        width: 300px;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+    }
+
+    .kutu {
+        background-color: white;
+        border: 1px solid rgb(211, 208, 208);
+    }
+
+    .kutu2 {
+        background-color: #fffde0;
+        border: 1px dashed rgb(255, 145, 0);
+    }
+
+    .kutu2::before {
+        content: "Popüler";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: #ff3d3d;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .kutu3 {
+        background-color: white;
+        border: 1px solid rgb(211, 208, 208);
+    }
+
+    .kutu h3, .kutu2 h3, .kutu3 h3 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .kutu p, .kutu2 p, .kutu3 p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 0;
+    }
+
+    .rty {
+        background-color: rgb(245, 244, 243);
+    }
+
+    .vcf {
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+        padding-top: 35px;
+    }
+    .aret{
+        display: flex;
+        justify-content: center;
+    }
+    .footer {
+        background-color: rgb(46, 46, 46);
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 14px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+</style>
+
+<body>
+    <div class="header"> 
+        <div class="header-content"> 
+            <div class="logo">
+                <p>&ltCodeCoffe/></p>
+            </div>
+            <div class="div-links">
+                <a href="#">Anasayfa</a>
+                <a href="#">Menü</a>
+                <a href="#">Blog</a>
+                <a href="#">İletişim</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bas">
+        <h1 class="a">Kodla. Derle. Kahve İç.</h1>
+        <p class="aciklama">Yazılımcılar için özel olarak demlenmiş kahveler ve rahat çalışma ortamı.</p>
+        
+        <a href="#" class="menu-button">Menüyü Gör</a> 
+    </div>
+    <p class="awe">--Fiyat Listesi--</p>
+    <div class="aret">    
+        <div class="qwe">    
+            <table class="menu-table">
+                <tbody>
+                    <tr>
+                        <td>Full Stack Filter Coffee</td>
+                        <td class="price">₺45</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript Espresso</td>
+                        <td class="price">₺35</td>
+                    </tr>
+                    <tr>
+                        <td>Python Latte</td>
+                        <td class="price">₺55</td>
+                    </tr>
+                    <tr>
+                        <td>CSS Cappuccino (Bol Köpüklü)</td>
+                        <td class="price">₺50</td>
+                    </tr>
+                    <tr>
+                        <td>HTML Hot Chocolate</td>
+                        <td class="price">₺40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="rty">
+    <p class="vcf">-- Güncel Blog --</p>
+    <div style="display: flex; justify-content: center;">
+        <div class="blog-kapsayici"> 
+            
+            <div class="kutu">
+                <h3>CSS Box Model</h3>
+                <p class="K">K</p>
+                <p style="margin-top: 5px;">utu modeli, her HTML elemanının etrafını saran bir kutu gibi davranmasıdır. Margin, border, padding ve content bu yapıyı oluşturur.</p>
+                <a href="#" style="color: rgb(255, 145, 0); text-decoration: none; display: block; margin-top: 10px;">Devamını Oku →</a>
+            </div>
+            
+            <div class="kutu2">
+                <h3>Flexbox Düzeni</h3>
+                <p style="font-weight: normal; margin-top: 10px;">Elemanları yatay veya dikey olarak hizalamak hiç bu kadar kolay olmamıştı. `display: flex` ile hayat kurtarın.</p>
+                <a href="#" style="color: rgb(255, 145, 0); text-decoration: none; display: block; margin-top: 10px; font-weight: normal;">Devamını Oku →</a>
+            </div>
+            
+            <div class="kutu3">
+                <h3>CSS Grid</h3>
+                <p style="font-weight: normal; margin-top: 10px;">İki boyutlu (satır ve sütun) düzenler oluşturmak için en güçlü araçtır. Responsive tasarımlar için birebirdir.</p>
+                 <a href="#" style="color: rgb(255, 145, 0); text-decoration: none; display: block; margin-top: 10px; font-weight: normal;">Devamını Oku →</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+    <div class="footer-content">
+        <p>© 2023 Developer Coffee Shop. Tüm hakları saklıdır.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Değişkenler ve Veri Tipleri</title>
+    <style>
+        /* --- TEMEL TASARIM (Tüm dosyalarda ortak) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 6px solid #f5576c;
+        }
+
+        .intro h2 {
+            color: #c41e3a;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 {
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header h2::before {
+            content: "📦"; /* Kutu İkonu (Değişkenler için) */
+            margin-right: 15px;
+            font-size: 0.8em;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .property-card {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-card h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.8;
+        }
+
+        /* JS Syntax Highlighting Simulation */
+        .js-keyword { color: #d55fde; font-weight: bold; } /* let, const, var */
+        .js-var { color: #e5c07b; } /* variable names */
+        .js-string { color: #98c379; } /* "string" */
+        .js-num { color: #d19a66; } /* 123 */
+        .js-bool { color: #56b6c2; } /* true/false */
+        .js-comment { color: #7f848e; font-style: italic; }
+
+        .visual-demo {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 3px solid #e2e8f0;
+        }
+
+        .demo-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: block;
+        }
+
+        .tip {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .tip strong { color: #48bb78; }
+
+        .note {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .note strong { color: #f56565; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .comparison-table th { background: #667eea; color: white; padding: 15px; text-align: left; }
+        .comparison-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* --- JS DEMO İÇİN ÖZEL STİLLER --- */
+        .variable-box {
+            display: inline-block;
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            background: #edf2f7;
+            min-width: 120px;
+            text-align: center;
+        }
+        .var-name {
+            display: block;
+            font-weight: bold;
+            color: #4a5568;
+            border-bottom: 1px solid #cbd5e0;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            font-family: monospace;
+        }
+        .var-value {
+            display: block;
+            color: #2b6cb0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .type-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: white;
+            margin-top: 5px;
+        }
+        .badge-string { background-color: #48bb78; }
+        .badge-number { background-color: #ed8936; }
+        .badge-boolean { background-color: #9f7aea; }
+        .badge-undefined { background-color: #a0aec0; }
+
+        .demo-btn {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .demo-btn:hover { background-color: #5a67d8; }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>JS Değişkenler ve Veri Tipleri</h1>
+            <p>Verileri Saklama ve Türlerini Anlama</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Veriler Nerede Saklanır?</h2>
+                <p>Programlama yaparken verileri (isimler, sayılar, durumlar) hafızada tutmamız gerekir. JavaScript'te bu işi <strong>değişkenler (variables)</strong> yapar. Her değişkenin içinde tuttuğu verinin ise bir türü vardır (Yazı mı? Sayı mı? Doğru/Yanlış mı?).</p>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>1. Değişken Tanımlama</h2>
+                </div>
+
+                <div class="property-card">
+                    <h3>let, const ve var</h3>
+                    <p>JavaScript'te değişken tanımlamak için kullanılan 3 anahtar kelime vardır. Modern JavaScript'te (ES6+) genellikle <code>let</code> ve <code>const</code> kullanılır.</p>
+
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Anahtar Kelime</th>
+                            <th>Özellik</th>
+                            <th>Kullanım Alanı</th>
+                        </tr>
+                        <tr>
+                            <td><code>let</code></td>
+                            <td>Değeri sonradan <strong>değiştirilebilir</strong>.</td>
+                            <td>Skor, sayaç gibi değişen veriler için.</td>
+                        </tr>
+                        <tr>
+                            <td><code>const</code></td>
+                            <td>Değeri <strong>sabit kalır</strong> (Constant). Değiştirilemez.</td>
+                            <td>API anahtarları, sabit pi sayısı vb.</td>
+                        </tr>
+                        <tr>
+                            <td><code>var</code></td>
+                            <td>Eski yöntem. Kapsam (scope) sorunları yaratabilir.</td>
+                            <td>Eski tarayıcı desteği gerekmedikçe kullanılmaz.</td>
+                        </tr>
+                    </table>
+
+                    <div class="code-block">
+                        <span class="js-keyword">let</span> <span class="js-var">isim</span> = <span class="js-string">"Ahmet"</span>; <span class="js-comment">// Değiştirilebilir</span><br>
+                        <span class="js-keyword">const</span> <span class="js-var">piSayisi</span> = <span class="js-num">3.14</span>; <span class="js-comment">// Sabit, değiştirilemez</span><br>
+                        <span class="js-var">isim</span> = <span class="js-string">"Mehmet"</span>; <span class="js-comment">// Geçerli ✅</span><br>
+                        <span class="js-comment">// piSayisi = 3.15; // HATA! ❌</span>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Canlı Test: Değer Değiştirme</div>
+                        <div class="variable-box">
+                            <span class="var-name">let sayi</span>
+                            <span class="var-value" id="demo-let-val">10</span>
+                        </div>
+                        <div class="variable-box" style="border-color: #f56565; background:#fff5f5;">
+                            <span class="var-name">const sabit</span>
+                            <span class="var-value" id="demo-const-val">100</span>
+                        </div>
+                        <br>
+                        <button class="demo-btn" onclick="arttirLet()">let'i Arttır (+1)</button>
+                        <button class="demo-btn" onclick="degistirConst()" style="background:#f56565;">const'u Değiştir</button>
+                        <span id="error-msg" style="color:red; margin-left:10px; font-weight:bold; display:none;">Hata: const değiştirilemez!</span>
+
+                        <script>
+                            let myLet = 10;
+                            const myConst = 100;
+
+                            function arttirLet() {
+                                myLet++;
+                                document.getElementById('demo-let-val').innerText = myLet;
+                                document.getElementById('error-msg').style.display = 'none';
+                            }
+
+                            function degistirConst() {
+                                // Simüle edilmiş hata
+                                document.getElementById('error-msg').style.display = 'inline';
+                                setTimeout(() => {
+                                    document.getElementById('error-msg').style.display = 'none';
+                                }, 2000);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>2. Veri Tipleri (Data Types)</h2>
+                </div>
+
+                <div class="property-card">
+                    <h3>Temel Tipler (Primitives)</h3>
+                    <p>JavaScript değişkenleri farklı türde veriler tutabilir. <code>typeof</code> operatörü ile bir verinin türünü öğrenebiliriz.</p>
+
+                    <div class="code-block">
+                        <span class="js-keyword">let</span> <span class="js-var">metin</span> = <span class="js-string">"Merhaba"</span>; <span class="js-comment">// String</span><br>
+                        <span class="js-keyword">let</span> <span class="js-var">yas</span> = <span class="js-num">25</span>; <span class="js-comment">// Number</span><br>
+                        <span class="js-keyword">let</span> <span class="js-var">aktifMi</span> = <span class="js-bool">true</span>; <span class="js-comment">// Boolean</span><br>
+                        <span class="js-keyword">let</span> <span class="js-var">bos</span>; <span class="js-comment">// Undefined (Tanımsız)</span>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Canlı Test: Tip Kontrolü (typeof)</div>
+                        
+                        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                            <div class="variable-box">
+                                <span class="var-name">"Ali"</span>
+                                <button class="demo-btn" style="font-size:0.8em; padding:2px 8px;" onclick="checkType('Ali', 'res-str')">Türünü Bul</button>
+                                <div id="res-str" class="type-badge badge-string" style="display:none;">String</div>
+                            </div>
+
+                            <div class="variable-box">
+                                <span class="var-name">1923</span>
+                                <button class="demo-btn" style="font-size:0.8em; padding:2px 8px;" onclick="checkType(1923, 'res-num')">Türünü Bul</button>
+                                <div id="res-num" class="type-badge badge-number" style="display:none;">Number</div>
+                            </div>
+
+                            <div class="variable-box">
+                                <span class="var-name">false</span>
+                                <button class="demo-btn" style="font-size:0.8em; padding:2px 8px;" onclick="checkType(false, 'res-bool')">Türünü Bul</button>
+                                <div id="res-bool" class="type-badge badge-boolean" style="display:none;">Boolean</div>
+                            </div>
+                        </div>
+
+                        <script>
+                            function checkType(val, elemId) {
+                                document.getElementById(elemId).style.display = 'inline-block';
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>3. Template Literals (``)</h2>
+                </div>
+                <div class="property-card">
+                    <h3>Modern Metin Birleştirme</h3>
+                    <p>Eskiden metinleri <code>+</code> ile birleştirirdik. Artık "Backtick" (``) işareti kullanarak değişkenleri metin içine daha kolay gömebiliyoruz.</p>
+
+                    <div class="code-block">
+                        <span class="js-keyword">let</span> <span class="js-var">ad</span> = <span class="js-string">"Ahmet"</span>;<br>
+                        <span class="js-comment">// Eski Yöntem</span><br>
+                        <span class="js-keyword">let</span> <span class="js-var">mesaj1</span> = <span class="js-string">"Merhaba "</span> + <span class="js-var">ad</span> + <span class="js-string">"!"</span>;<br><br>
+                        <span class="js-comment">// Yeni Yöntem (Template Literal)</span><br>
+                        <span class="js-keyword">let</span> <span class="js-var">mesaj2</span> = <span class="js-string">`Merhaba ${ad}!`</span>;
+                    </div>
+                    
+                    <div class="note">
+                        <strong>⚠️ Not:</strong> Backtick (``) işareti genellikle klavyede AltGr + noktalı virgül (;) tuş kombinasyonuyla yapılır.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>JavaScript Temelleri Rehberi &copy; PMTAL</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML IMG Etiketi - Kapsamlı Rehber</title>
+</head>
+<body>
+    <h1>&lt;img&gt; Etiketi - Detaylı Açıklama</h1>
+
+<h2>Temel Tanım:</h2>
+<p><strong>Açıklama:</strong> &lt;img&gt; etiketi HTML'de resim göstermek için kullanılan boş (self-closing) bir etikettir.</p>
+<img src="herhangibirfoto.jpg" alt="Açıklama">
+
+<h2>Önemli Özellikler (Attributes)</h2>
+
+<h3>1. src (source)</h3>
+<p><strong>Açıklama:</strong> Gösterilecek resmin URL'sini belirtir.</p>
+<ul>
+  <li>Göreceli Yol: <code>&lt;img src="images/foto.jpg"&gt;</code></li>
+  <li>Mutlak Yol: <code>&lt;img src="/images/foto.jpg"&gt;</code></li>
+  <li>Harici URL: <code>&lt;img src="https://example.com/image.jpg"&gt;</code></li>
+  <li>Data URI: <code>&lt;img src="data:image/png;base64,iVBORw0KG..."&gt;</code></li>
+</ul>
+
+<h3>2. alt (Alternatif text)</h3>
+<p><strong>Açıklama:</strong> Resim yüklenmediğinde veya ekran okuyucular için alternatif metin sağlar.</p>
+<p><strong>Örnek:</strong> Dekoratif resimler için boş bırakılmalıdır: <code>alt=""</code></p>
+<img src="herhangibirfoto.jpg" alt="Yeşil arka planlı örnek resim">
+<p><em>Yukaridaki resim bir örnek Görseldir</em></p>
+
+<hr>
+<h2>Önemli Özellikler</h2>
+
+<h3>3. width ve height</h3>
+<p><strong>Açıklama:</strong> Resim genişlik ve yüksekliğini piksel cinsinden belirler.</p>
+<p><strong>İpucu:</strong> Mutlaka değer atanır kullanılır (layout shift'i önler).</p>
+<img src="herhangibirfoto.jpg" alt="Açıklama" width="300" height="200">
+
+<h3>4. title</h3>
+<p><strong>Açıklama:</strong> Mouse üzerine gelindiğinde görünen tooltip metni.</p>
+<img src="herhangibirfoto.jpg" alt="Turuncu kare" title="Bu resim üzerine gelindiğinde bu metni görürsünüz" width="150" height="150">
+
+<h3>5. loading</h3>
+<p><strong>Değerler:</strong> <code>lazy</code> | <code>eager</code></p>
+<p><strong>Açıklama:</strong> Resmin yüklenme stratejisini belirler.</p>
+<ul>
+  <li><code>loading="lazy"</code>: Resmi viewport’a yaklaştığında yükler (performans için)</li>
+  <li><code>loading="eager"</code>: Resmi hemen yükler (varsayılan)</li>
+</ul>
+<img src="herhangibirfoto.jpg" alt="lazy loading örneği" loading="lazy" width="200" height="200">
+
+<hr>
+
+<h2>Responsive Resim Özellikleri</h2>
+
+<h3>7. srcset</h3>
+<p><strong>Açıklama: </strong>Farklı ekran boyutları ve çözünürlükleri için alternatif resim kaynakları belirtir.</p>
+<img src="https://via.placeholder.com/400x300/E91E63/FFFFFF?text=Small" srcset="https://via.placeholder.com/800x600/E91E63/FFFFFF?text=Medium 800w,
+https://via.placeholder.com/1200x900/E91E63/FFFFFF?text=large 1200w" alt="Responsive resim örneği" width="400" heigh="300">
+
+<pre>&lt;img src="small.jpg"
+    srcset="medium.jpg 800w, large.jpg 1200w"
+    alt="Açıklama"&gt;</pre>
+
+<h3>8. sizes</h3>
+
+<p><strong>Açıklama:</strong> scrset ile birlikte kullanılır, resmin farklı wievport genişliklerine ne kadar yer kaplayacağını belirtir</p>
+<img srcset="medium.jpg 800w, large.jpg 1200w" sizes="(max-witdh: 600px) 100vw, 50vw" alt="Açıklama">
+
+<hr>
+
+<h2>Resim Formatları</h2>
+<p>IMG etiketi şu formattaki resimleri destekler:</p>
+<ul>
+    <li><strong>JPEG/JPG:</strong> Fotoğraflar için ideal</li>
+    <li><strong>PNG:</strong> Şeffaflık gerektiren görseller için</li>
+    <li><strong>GIF:</strong> Basit animasyonlu resimler için</li>
+    <li><strong>SVG:</strong> Vektörel görseller için (ölçeklenebilir)</li>
+    <li><strong>WebP/AVIF:</strong> Modern ve optimize edilmiş formatlar</li>
+    <li><strong>BMP:</strong> Temel bitmap formatı</li>
+</ul>
+
+<hr>
+
+<h2>Pratik Örnekler</h2>
+
+<h3>Örnek 1: Temel Resim</h3>
+<p><code>&lt;img src="https://via.placeholder.com/200x60/7BB8FF/FFFFFF?text=Temel+Resim" alt="Gri renkli temel resim örneği"&gt;</code></p>
+<img src="photo.jpg" alt="Manzara fotoğrafı" width="200" height="200">
+
+<h3>Örnek 2: Link İçinde Resim</h3>
+<a href="homepage">
+  <img src="https://via.placeholder.com/150x150/111111/FFFFFF?text=Tikla" alt="Tıklanabilir resim - mor arka plan">
+</a>
+<br>
+<a href="sayfa.html">
+  <img src="buton.jpg" alt="Tıklanabilir buton">
+</a>
+
+<h3>Örnek 3: Figure ile Birlikte</h3>
+<figure>
+  <img src="https://via.placeholder.com/300x200/BBBBBB/000000?text=Figure+Image" 
+       alt="Turuncu kutulu figür örneği" width="300" height="200">
+  <figcaption>Bu bir resmin açıklaması burada yer alır</figcaption>
+</figure>
+
+<h3>Örnek 4: Responsive Resim (srcset kullanımı)</h3>
+<p><code>
+&lt;img src="https://via.placeholder.com/400x600/FF0000/000000?text=Responsive" 
+     srcset="https://via.placeholder.com/400x600/FF0000/000000?text=480w 480w, 
+             https://via.placeholder.com/800x1200/FF0000/000000?text=800w 800w" 
+     sizes="(max-width: 600px) 480px, 800px" 
+     alt="Smart responsive resim" width="400" height="600"&gt;
+</code></p>
+
+<h2>İyi Pratikler</h2>
+<ul>
+  <li><strong>Her zaman alt özelliğini kullanın:</strong> Erişilebilirlik ve SEO için kritik.</li>
+  <li><strong>Mutlaka width/height belirtin:</strong> Cumulative Layout Shift (CLS) önler.</li>
+  <li><strong>Modern formatlar kullanın:</strong> WebP modern tarayıcılar için ideal.</li>
+  <li><strong>Lazy loading kullanın:</strong> Sayfa yüklenmesini hızlandırır.</li>
+  <li><strong>Responsive resimler kullanın:</strong> Srcset ve sizes ile uyumlu.</li>
+  <li><strong>Başlık ve açıklama yazın:</strong> Resmi tam olarak tanımlasın.</li>
+  <li><strong>Dekoratif resimler için alt="" kullanın:</strong> Ekran okuyucuları atlar.</li>
+</ul>
+
+<h2>Yaygın Hatalar</h2>
+<ul>
+  <li>Alt özelliğini unutmak</li>
+  <li>Width/height belirtmemek (Layout shift’e sebep olur)</li>
+  <li>Çok büyük resimler kullanmak (performans sorunu)</li>
+  <li>Yanlış dosya yolu (404 hatası)</li>
+  <li>Alt metni "fotoğraf" gibi genel kelimelerle doldurmak</li>
+  <li>Eski tarayıcı desteği düşünmeden yeni formatlar kullanmak</li>
+</ul>
+
+<h2>Tarayıcı Desteği</h2>
+<p>&lt;img&gt; etiketi tüm tarayıcılarda desteklenir. Ancak bazı özellikler için:</p>
+<ul>
+  <li><strong>loading="lazy":</strong> Modern tarayıcılarda desteklenir (IE desteklemez)</li>
+  <li><strong>srcset/sizes:</strong> HTML5’te tüm modern tarayıcılar</li>
+  <li><strong>WebP/AVIF formatları:</strong> IE ve eski Safari sürümleri desteklemez</li>
+  <li><strong>SVG/PNG/JPG:</strong> En yeni tarayıcılar destekler</li>
+</ul>
+
+<h2>Özet</h2>
+<p><strong>&lt;img&gt; etiketi:</strong> Etiket web sayfalarında görsel içerik göstermek için kullanılan temel HTML elementidir. Doğru kullanıldığında performans, erişilebilirlik ve kullanıcı deneyimini iyileştirir.</p>
+
+<h3>Minimum gereklilikler:</h3>
+<img src="herhangibirfoto.jpg" alt="Açıklayıcı metin" width="400" height="300"&gt;>
+
+<h3>Önerilen kullanım:</h3>
+<p><code>
+&lt;img src="herhangibirfoto.jpg" 
+     srcset="resim-480w.jpg 480w, resim-800w.jpg 800w" 
+     sizes="(max-width: 600px) 480px, 800px" 
+     alt="Resim için anlamlı açıklama" 
+     width="800" height="600" loading="lazy"&gt;
+</code></p>
+
+<footer>
+    <small>Bu döküman HTML img etiketi hakkında kapsamlı bir rehberdir. Daha fazla bilgi için <a href="https://www.w3.org/">W3C spesifikasyonlarını</a> inceleyebilirsiniz.</small>
+</footer>
+</body>
+</html>

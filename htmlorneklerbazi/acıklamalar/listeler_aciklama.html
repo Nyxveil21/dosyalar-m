@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Listeleme Etiketleri</title>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.6;">
+    
+    <h1 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;">HTML Listeleme Etiketleri</h1>
+    
+    <p>HTML'de üç ana liste türü bulunur: Sırasız listeler (ul), Sıralı listeler (ol) ve Tanım listeleri (dl). Bu etiketler içeriği organize etmek için kullanılır.</p>
+
+    <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+    <!-- UL - Sırasız Liste -->
+    <section>
+        <h2 style="color: #e74c3c;">1. Sırasız Liste (&lt;ul&gt;)</h2>
+        
+        <h3 style="color: #555;">Açıklama:</h3>
+        <p><strong>&lt;ul&gt;</strong> (Unordered List) etiketi, sırasız madde listesi oluşturur. Her liste öğesi <strong>&lt;li&gt;</strong> (List Item) etiketi ile tanımlanır. Varsayılan olarak maddeler yuvarlak işaretlerle (bullet) gösterilir.</p>
+        
+        <h3 style="color: #555;">Kullanımı:</h3>
+        <pre style="background-color: #f4f4f4; padding: 15px; border-left: 4px solid #e74c3c; overflow-x: auto;">
+&lt;ul&gt;
+    &lt;li&gt;Birinci madde&lt;/li&gt;
+    &lt;li&gt;İkinci madde&lt;/li&gt;
+    &lt;li&gt;Üçüncü madde&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+        <h3 style="color: #555;">Örnek:</h3>
+        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px;">
+            <h4 style="margin-top: 0;">Alışveriş Listesi:</h4>
+            <ul>
+                <li>Ekmek</li>
+                <li>Süt</li>
+                <li>Yumurta</li>
+                <li>Peynir</li>
+            </ul>
+        </div>
+
+        <h3 style="color: #555;">İç İçe Liste Örneği:</h3>
+        <div style="background-color: #fff3cd; padding: 15px; border-radius: 5px;">
+            <ul>
+                <li>Meyveler
+                    <ul>
+                        <li>Elma</li>
+                        <li>Portakal</li>
+                        <li>Muz</li>
+                    </ul>
+                </li>
+                <li>Sebzeler
+                    <ul>
+                        <li>Domates</li>
+                        <li>Salatalık</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+    <!-- OL - Sıralı Liste -->
+    <section>
+        <h2 style="color: #27ae60;">2. Sıralı Liste (&lt;ol&gt;)</h2>
+        
+        <h3 style="color: #555;">Açıklama:</h3>
+        <p><strong>&lt;ol&gt;</strong> (Ordered List) etiketi, numaralandırılmış liste oluşturur. Her madde otomatik olarak numaralandırılır. <code>type</code> ve <code>start</code> özellikleri ile numaralandırma değiştirilebilir.</p>
+        
+        <h3 style="color: #555;">Kullanımı:</h3>
+        <pre style="background-color: #f4f4f4; padding: 15px; border-left: 4px solid #27ae60; overflow-x: auto;">
+&lt;ol&gt;
+    &lt;li&gt;Birinci adım&lt;/li&gt;
+    &lt;li&gt;İkinci adım&lt;/li&gt;
+    &lt;li&gt;Üçüncü adım&lt;/li&gt;
+&lt;/ol&gt;</pre>
+
+        <h3 style="color: #555;">Temel Örnek:</h3>
+        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px;">
+            <h4 style="margin-top: 0;">Çay Yapma Talimatları:</h4>
+            <ol>
+                <li>Su kaynat</li>
+                <li>Çay demliğine çay koy</li>
+                <li>Kaynar suyu dökün</li>
+                <li>5 dakika demlenmeye bırak</li>
+                <li>Servis yap</li>
+            </ol>
+        </div>
+
+        <h3 style="color: #555;">Farklı Numaralandırma Türleri:</h3>
+        <div style="background-color: #d4edda; padding: 15px; border-radius: 5px;">
+            <p><strong>Rakamlarla (varsayılan):</strong></p>
+            <ol>
+                <li>Birinci</li>
+                <li>İkinci</li>
+                <li>Üçüncü</li>
+            </ol>
+
+            <p><strong>Harflerle (type="A"):</strong></p>
+            <ol type="A">
+                <li>Birinci</li>
+                <li>İkinci</li>
+                <li>Üçüncü</li>
+            </ol>
+
+            <p><strong>Küçük harflerle (type="a"):</strong></p>
+            <ol type="a">
+                <li>Birinci</li>
+                <li>İkinci</li>
+                <li>Üçüncü</li>
+            </ol>
+
+            <p><strong>Roma rakamlarıyla (type="I"):</strong></p>
+            <ol type="I">
+                <li>Birinci</li>
+                <li>İkinci</li>
+                <li>Üçüncü</li>
+            </ol>
+
+            <p><strong>Belirli sayıdan başlama (start="5"):</strong></p>
+            <ol start="5">
+                <li>Beşinci adım</li>
+                <li>Altıncı adım</li>
+                <li>Yedinci adım</li>
+            </ol>
+        </div>
+    </section>
+
+    <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+    <!-- DL - Tanım Listesi -->
+    <section>
+        <h2 style="color: #8e44ad;">3. Tanım Listesi (&lt;dl&gt;)</h2>
+        
+        <h3 style="color: #555;">Açıklama:</h3>
+        <p><strong>&lt;dl&gt;</strong> (Description List) etiketi, terim ve açıklama çiftlerinden oluşan listeler için kullanılır. <strong>&lt;dt&gt;</strong> (Description Term) terim için, <strong>&lt;dd&gt;</strong> (Description Details) ise açıklama için kullanılır.</p>
+        
+        <h3 style="color: #555;">Kullanımı:</h3>
+        <pre style="background-color: #f4f4f4; padding: 15px; border-left: 4px solid #8e44ad; overflow-x: auto;">
+&lt;dl&gt;
+    &lt;dt&gt;Terim&lt;/dt&gt;
+    &lt;dd&gt;Terimin açıklaması&lt;/dd&gt;
+    
+    &lt;dt&gt;Başka bir terim&lt;/dt&gt;
+    &lt;dd&gt;Bu terimin açıklaması&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+
+        <h3 style="color: #555;">Örnek:</h3>
+        <div style="background-color: #e8daef; padding: 15px; border-radius: 5px;">
+            <h4 style="margin-top: 0;">Programlama Terimleri:</h4>
+            <dl>
+                <dt style="font-weight: bold; color: #8e44ad;">HTML</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">HyperText Markup Language - Web sayfalarının yapısını oluşturmak için kullanılan işaretleme dilidir.</dd>
+                
+                <dt style="font-weight: bold; color: #8e44ad;">CSS</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">Cascading Style Sheets - Web sayfalarının görünümünü ve stilini belirlemek için kullanılır.</dd>
+                
+                <dt style="font-weight: bold; color: #8e44ad;">JavaScript</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">Web sayfalarına etkileşim ve dinamik özellikler eklemek için kullanılan programlama dilidir.</dd>
+            </dl>
+        </div>
+
+        <h3 style="color: #555;">Sözlük Örneği:</h3>
+        <div style="background-color: #e8daef; padding: 15px; border-radius: 5px;">
+            <dl>
+                <dt style="font-weight: bold; color: #8e44ad;">Frontend</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">Kullanıcının doğrudan etkileşimde bulunduğu, web sitesinin görünen kısmı.</dd>
+                
+                <dt style="font-weight: bold; color: #8e44ad;">Backend</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">Web sitesinin arka planda çalışan, veritabanı ve sunucu işlemlerini yöneten kısmı.</dd>
+                
+                <dt style="font-weight: bold; color: #8e44ad;">API</dt>
+                <dd style="margin-left: 20px; margin-bottom: 10px;">Application Programming Interface - Farklı yazılımların birbirleriyle iletişim kurmasını sağlayan arayüz.</dd>
+            </dl>
+        </div>
+    </section>
+
+    <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+    <!-- Karşılaştırma -->
+    <section>
+        <h2 style="color: #34495e;">Liste Türlerinin Karşılaştırması</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <tr style="background-color: #34495e; color: white;">
+                <th style="padding: 10px; border: 1px solid #ddd;">Liste Türü</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Ne Zaman Kullanılır</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Etiket</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">Sırasız Liste</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Sıralamanın önemli olmadığı maddeler için</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">&lt;ul&gt;</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding: 10px; border: 1px solid #ddd;">Sıralı Liste</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Adımlar, sıralama veya öncelik önemli olduğunda</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">&lt;ol&gt;</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">Tanım Listesi</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Terim-açıklama çiftleri için (sözlük, SSS vb.)</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">&lt;dl&gt;</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #ddd; text-align: center; color: #777;">
+        <p>HTML Listeleme Etiketleri Rehberi</p>
+    </footer>
+
+</body>
+</html>
